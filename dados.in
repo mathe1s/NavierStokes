@@ -1,0 +1,85 @@
+&grid
+!******number of points in x direction 
+imax    = 521
+!******number of points in y direction 
+jmax    = 481
+!******number of temporal iteration  
+maxit   = 8000
+!******step time
+dt      = 0.01d0
+!******filter parameter(<0.2)
+sigmaf  = 0.1d0
+!******number of interation to created a file of data outt.f90
+cgd     = 100
+!******number of interation to use the filter
+cfd     = 1
+!******number of interation to save the points in time 
+ctd     = 1
+&end
+
+&freq
+!******acoustic pulse radius
+r0_acous  = 0.03d0
+amplitude = 0.8d0
+m_pt_acous= 0.d0
+n_pt_acous= 0.d0
+wfi       = 0.3d0
+wff	    = 2.3d0
+wf 	    = 1.0d0
+iterw	    = 10
+pxfft1    = 7.d0
+pxfft2    = 9.d0
+pxfft3    = 10.d0
+pxfft4    = 18.d0
+pxfft5    = 20.d0
+&end
+
+&freeadm
+!*********xdomain
+mmin= -6.5d0
+mmax= 19.5d0
+!*********ydomain
+nmin= -2.4d0
+nmax=  2.4d0
+!*********point1
+pxr1=  9.0d0
+pyr1=  0.0d0
+!*********point2
+pxr2=  9.0d0
+pyr2=  0.8d0
+!*********point3
+pxr3=  9.0d0
+pyr3= -0.8d0
+&end
+
+&flow
+!*********Up velocity
+U1 = 0.9d0
+!*********Down velocity
+U2 = 0.1d0
+!*********Reynolds number
+Re = 10000.0d0
+!*********Prandtl number
+Pr = 0.71d0
+!*********Up temperature
+T1 = 1.0d0
+!*********Down temperature
+T2 = 0.5d0
+!*********Reference temperature
+Tref = 273.15d0
+&end
+
+&grid
+!*********Number of points in the NRBC
+D       = 90
+!*********Buffer NRBC parameters
+c1b     = 0.01d0
+c2b     = 20.0d0
+c3b     = 50.0d0
+&end
+
+&mpi
+!*********Number of process used by MPI 
+num_procs_x=5
+num_procs_y=6
+$end

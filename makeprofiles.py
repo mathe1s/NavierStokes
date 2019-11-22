@@ -1,0 +1,25 @@
+for i in range(0, 6):
+	nomeArquivo = ""
+	arq = open(nomeArquivo, 'w')
+	arq.write('reset\n')
+	arq.write('set term jpeg enhanced large font times 20 lw 2 size ' +str(sizeX)+','+str(sizeY)+'\n')
+	arq.write('#set key samplen 1\n')
+	arq.write('#set key spacing 1\n')
+	arq.write('set contour base\n')
+	arq.write('unset sur\n')
+	arq.write('set cntrparam levels  incr 0.5, 0.025 ,0.85 \n')
+	arq.write('set view map \n')
+	arq.write('set iso 100000 \n')
+	arq.write('set samp 1000000 \n')
+	arq.write("set xrange[0:" + str(mmax-PMLx) + "]\n")
+	arq.write('set xtics 1 \n')
+	arq.write('set ytics 0.5 \n')
+	arq.write("set yrange["+str(round((nmin+PMLy),2))+":"+str(round((nmax-PMLy),2))+"] \n")
+	arq.write('set zero 1e-12 \n')
+	arq.write("set size ratio " + str(round((nmax-nmin)/(mmax-mmin),2)) +"  \n")
+	arq.write('unset key \n')
+	arq.write('set palette rgb 33,13,10 \n')
+	arq.write('set pm3d at b \n')
+	arq.write('set cbrange[0.67:0.75] \n')
+	arq.close
+
